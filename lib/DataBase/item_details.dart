@@ -34,6 +34,7 @@ class ItemDetails extends StatelessWidget {
               onPressed: () {
                 //Delete the item
                 _reference.delete();
+                print('$itemId Deleted');
               },
               icon: const Icon(Icons.delete))
         ],
@@ -53,13 +54,19 @@ class ItemDetails extends StatelessWidget {
             //display the data
             return Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-
               children: [
                 const SizedBox(height: 20),
                 //Text('${data['hotel_name']}'),
-                const SizedBox(height: 10),
-                Text('${data['menu']}'),
-
+                const SizedBox(height: 15),
+                Text('${data['menu']}',textAlign: TextAlign.center),
+                const SizedBox(height: 15),
+                Text('${data['menu1']}',textAlign: TextAlign.center),
+                const SizedBox(height: 15),
+                Text('${data['menu2']}',textAlign: TextAlign.center),
+                const SizedBox(height: 15),
+                Text('${data['menu3']}',textAlign: TextAlign.center),
+                const SizedBox(height: 15),
+                Text('${data['menu4']}',textAlign: TextAlign.center),
               ],
             );
           }

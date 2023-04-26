@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'DataBase/item_list.dart';
 import 'firebase_options.dart';
 import 'DataBase/item_details.dart';
+import 'new_login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,8 +29,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ItemList(),
-      //home: const LoginPage(),
+      //home: ItemList(),
+      home: LoginScreen(),
+      routes: {
+        'home': (context) => ItemList(),
+      },
     );
   }
 }
@@ -48,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   CollectionReference hotels =
       FirebaseFirestore.instance.collection('hotelslist');
+
   late Stream<QuerySnapshot> list_of_hotels;
 
   void _incrementCounter() {
